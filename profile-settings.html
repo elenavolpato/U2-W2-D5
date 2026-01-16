@@ -3,7 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix - Profile Settings Elena</title>
+    <title>U2-w2-D5 - Netflix Elena</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
-  <body></body>
+  <body class="bg-dark text-white">
+    <img class="logo" src="./assets/netflix_logo.png" alt="Netflix logo" />
+    <main>
+      <div class="w-50 m-auto">
+        <h1 class="pb-2">Edit Profile</h1>
+        <div class="container py-2 border-top border-bottom border-secondary">
+          <div class="row pt-1">
+            <img src="./assets/avatar.png" alt="avatar image" class="col col-3 align-self-baseline" />
+            <div class="col-9">
+              <div class="border-bottom border-secondary pb-2">
+                <p class="w-100 p-2 bg-secondary">Strive Student</p>
+                <label for="lang-selector" class="mt-4 py-3">Language</label> <br />
+                <select name="Language" id="lang-selector">
+                  <option value="pt-br">Português</option>
+                  <option value="it">Italiano</option>
+                  <option value="en">English</option>
+                  <option value="de">Deutsch</option>
+                </select>
+              </div>
+              <div class="border-bottom border-secondary py-3">
+                <h4>Maturity Settings</h4>
+                <button class="btn btn-secondary rounded-0 my-2">ALL MATURITY SETTINGS</button>
+                <p>Show titles of all maturity ratings for this profile</p>
+                <button class="btn btn-outline-secondary rounded-0">EDIT</button>
+              </div>
+              <div class="py-3">
+                <h4>Autoplay controls</h4>
+                <div>
+                  <input type="checkbox" name="autoplay-episodes" id="autoplay-episodes" />
+                  <label for="autoplay-episodes">Autoplay next episode in a series on all devices </label>
+                </div>
+                <div>
+                  <input type="checkbox" name="autoplay-browsing" id="autoplay-browsing" />
+                  <label for="autoplay-browsing">Autoplay previews while browsing on all devices</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3 container-fluid">
+          <div class="row gap-4">
+            <button class="col-3 btn btn-secondary rounded-0 py-2">SAVE</button>
+            <button class="col btn btn-outline-secondary rounded-0 py-2">CANCEL</button>
+            <button class="col btn btn-outline-secondary rounded-0 py-2">DELETE PROFILE</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
