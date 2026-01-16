@@ -84,15 +84,17 @@ img {
 }
 
 .carousel-btn.prev {
-  left: -25px;
+  left: 0;
+  top: 120px;
 }
 
 .carousel-btn.next {
-  right: -25px;
+  right: 0;
+  top: 120px;
 }
 
-footer img {
-  width: 20px;
+i.fab {
+  color: $secondary;
 }
 
 @import "./bootstrap/scss/bootstrap";

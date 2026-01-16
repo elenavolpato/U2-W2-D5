@@ -53,11 +53,11 @@ let ITEMS_PER_PAGE = getItemsPerPage();
 
 const createCarousel = (title, items, carouselId) => {
   let currentIndex = 0;
-  const totalPages = Math.floor(items.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(items.length / ITEMS_PER_PAGE);
 
   const carouselHTML = `
-        <div class="carousel-container">
-          <h2 class="text-white mb-3">${title}</h2>
+        <div class="carousel-container mx-3">
+          <h4 class="text-white mb-3">${title}</h4>
           <button class="carousel-btn prev" data-carousel="${carouselId}">‹</button>
           <div class="carousel-track">
             <div class="row g-2" id="${carouselId}-track"></div>
@@ -75,8 +75,7 @@ const renderCarouselItems = (carouselId, items, startIdx) => {
   const visibleItems = items.slice(startIdx, endIdx);
 
   // Calculate Bootstrap column class based on items per page
-  const totalColumns = Math.floor(12 / ITEMS_PER_PAGE);
-  console.log("here", totalColumns);
+  const totalColumns = Math.ceil(12 / ITEMS_PER_PAGE);
   const colClass = `col-${totalColumns}`;
 
   track.innerHTML = visibleItems
@@ -85,7 +84,7 @@ const renderCarouselItems = (carouselId, items, startIdx) => {
         <div class="${colClass}">
           <div class="carousel-item-custom">
             ${startIdx + idx < 3 ? '<div class="new-badge">NEW EPISODES</div>' : ""}
-              <img src="./assets/media/${item}"class="carousel-item-content img-fluid" />
+              <img src="./assets/media/${item}" class="carousel-item-content img-fluid" />
           </div>
         </div>
       `
@@ -127,7 +126,7 @@ window.addEventListener("resize", () => {
       carousels.forEach((carousel) => {
         const state = carouselStates[carousel.id];
         state.currentIndex = 0;
-        state.totalPages = Math.floor(carousel.items.length / ITEMS_PER_PAGE);
+        state.totalPages = Math.ceil(carousel.items.length / ITEMS_PER_PAGE);
         renderCarouselItems(carousel.id, carousel.items, 0);
       });
     }
