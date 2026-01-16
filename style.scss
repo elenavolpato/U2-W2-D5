@@ -1,0 +1,98 @@
+/* bootstrap customization imports */
+@import "./bootstrap/scss/functions";
+@import "./bootstrap/scss/variables";
+
+body {
+  background-color: $primary-bg-subtle-dark;
+  font-family: Netflix Sans, Arial, sans-serif;
+}
+img {
+  width: 40px;
+  &.logo {
+    width: 100px;
+  }
+}
+
+.carousel-container {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.carousel-track {
+  overflow: hidden;
+}
+
+.carousel-item-custom {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item-custom:hover {
+  transform: scale(1.05);
+  z-index: 5;
+}
+
+.carousel-item-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #808080;
+  font-size: 0.8rem;
+}
+
+.new-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #e50914;
+  color: white;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.75);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.carousel-btn.prev {
+  left: -25px;
+}
+
+.carousel-btn.next {
+  right: -25px;
+}
+
+footer img {
+  width: 20px;
+}
+
+@import "./bootstrap/scss/bootstrap";
